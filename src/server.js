@@ -1,15 +1,16 @@
 import dotenv from 'dotenv';
-import { app } from './app.js';
-import { db } from './db.js';
+import app from './app';
+import { db } from './db';
 
-dotenv.config()
+dotenv.config();
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
-    db.connect((err) => {
-        if (err) return console.error('error connecting: ' + err.stack);
-        
-        console.log('connected as id ' + db.threadId);
-    });
-    console.log("server running at port", port);
+  // eslint-disable-next-line consistent-return
+  db.connect((err) => {
+    if (err) return console.error(`error connecting: ${err.stack}`);
+
+    console.log(`connected as id ${db.threadId}`);
+  });
+  console.log('server running at port', port);
 });
