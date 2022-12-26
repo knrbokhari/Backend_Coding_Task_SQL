@@ -1,4 +1,4 @@
-import db from '../connectDB';
+import db from '../connectDB.js';
 
 // eslint-disable-next-line import/prefer-default-export
 export const getLongestDurationMovies = async () => {

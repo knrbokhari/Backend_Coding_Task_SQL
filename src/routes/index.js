@@ -1,9 +1,9 @@
-import moviesRoutesConfigure from './moviesRoutes';
-import ratingsRoutesConfigure from './ratingsRoutes';
+import moviesRoutesConfigure from './moviesRoutes.js';
+import ratingsRoutesConfigure from './ratingsRoutes.js';
 
-const configureAllRoutes = (app) => {
+const configure = (app) => {
   moviesRoutesConfigure(app);
   ratingsRoutesConfigure(app);
 };
 
-export default configureAllRoutes;
+export default configure;

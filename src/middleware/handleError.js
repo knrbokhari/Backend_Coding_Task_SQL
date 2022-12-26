@@ -1,4 +1,4 @@
-import { GeneralError } from '../utils/generalError';
+import { GeneralError } from '../utils/generalError.js';
 
 // eslint-disable-next-line no-unused-vars
 export default async (err, req, res, next) => {

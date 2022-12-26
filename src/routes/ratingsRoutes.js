@@ -1,13 +1,13 @@
 import express from 'express';
-import { getTopRatedMovies } from '../controllers/ratingsController';
+import { getTopRatedMovies } from '../controllers/ratingsController.js';
 
 const router = express.Router();
 
 // get top rated movies order by averageRating
-router.get('/top-rated-movies', getTopRatedMovies);
+router.get('/v1/top-rated-movies', getTopRatedMovies);
 
-const configure = (app) => {
-  app.use('/api/v1', router);
+const ratingsRoutesConfigure = (app) => {
+  app.use('/api', router);
 };
 
-export default configure;
+export default ratingsRoutesConfigure;

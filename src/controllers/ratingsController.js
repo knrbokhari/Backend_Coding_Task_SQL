@@ -1,5 +1,5 @@
-import { findTopRatedMovies } from '../services/ratingsServices';
-import asyncHandler from '../utils/asyncHandler';
+import { findTopRatedMovies } from '../services/ratingsServices.js';
+import asyncHandler from '../utils/asyncHandler.js';
 
 // eslint-disable-next-line import/prefer-default-export
 export const getTopRatedMovies = asyncHandler(async (req, res) => {

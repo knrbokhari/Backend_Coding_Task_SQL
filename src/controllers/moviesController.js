@@ -1,5 +1,5 @@
-import { createNewMovie, getLongestDurationMovies } from '../services/movieServices';
-import asyncHandler from '../utils/asyncHandler';
+import { createNewMovie, getLongestDurationMovies } from '../services/movieServices.js';
+import asyncHandler from '../utils/asyncHandler.js';
 
 export const longestDurationMovies = asyncHandler(async (req, res) => {
   const result = await getLongestDurationMovies();

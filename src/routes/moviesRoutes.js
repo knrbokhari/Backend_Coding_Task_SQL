@@ -1,16 +1,16 @@
 import express from 'express';
-import { addMovie, longestDurationMovies } from '../controllers/moviesController';
+import { addMovie, longestDurationMovies } from '../controllers/moviesController.js';
 
 const router = express.Router();
 
 // get top 10 movies with the longest runTime
-router.get('/longest-duration-movies', longestDurationMovies);
+router.get('/v1/longest-duration-movies', longestDurationMovies);
 
 // create new movie
-router.post('/new-movie', addMovie);
+router.post('/v1/new-movie', addMovie);
 
-const configure = (app) => {
-  app.use('/api/v1', router);
+const moviesRoutesConfigure = (app) => {
+  app.use('/api', router);
 };
 
-export default configure;
+export default moviesRoutesConfigure;
