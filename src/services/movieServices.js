@@ -1,5 +1,7 @@
 import db from '../connectDB.js';
 const promisePool = db.promise();
+import { QueryTypes } from 'sequelize';
+
 // eslint-disable-next-line import/prefer-default-
 
 export const getLongestDurationMovies = async () => {
@@ -14,15 +16,16 @@ export const getLongestDurationMovies = async () => {
 };
 
 export const createNewMovie = async (data) => {
-  const q = 'INSERT INTO movies(tconst, primaryTitle, runtimeMinutes, genres) VALUES (?)';
+  const q = 'INSERT INTO movies(tconst, titleType, primaryTitle, runtimeMinutes, genres) VALUES (?)';
 
   const values = [
     data.tconst,
+    data.titleType,
     data.primaryTitle,
     data.runtimeMinutes,
     data.genres,
   ];
 
-  const results = await db.query(q, [values]);
+  const results = await promisePool.query(q, [values])
   return results;
 };

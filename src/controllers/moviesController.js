@@ -7,6 +7,6 @@ export const longestDurationMovies = asyncHandler(async (req, res) => {
 });
 
 export const addMovie = asyncHandler(async (req, res) => {
-  const result = await createNewMovie(req.body);
-  return res.status(201).json({ data: result, msg: 'Movie create successfully', success: true });
+  await createNewMovie(req.body);
+  return res.status(201).json({ msg: 'Movie create successfully', success: true });
 });
