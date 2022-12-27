@@ -56,7 +56,7 @@ CREATE TABLE ratings (
 and type `exit` then enter.
 
 ### import csv into MySql Table
-Go to `http://localhost/phpmyadmin` and give user and password. go our database select movies table. go to import page. click on Choose File and select movies.csv & and `check` Do not abort on INSERT error. and click Go button. Do the same for ratings.
+Go to `http://localhost/phpmyadmin` and give user and password. Go to your database select database & movies table. Go to import page. click on `Choose File` and select `movies.csv` & and `check` Do not abort on INSERT error. and click Go button. Delete the fast row. Do the same for ratings table.
 
 ## Configure app
 Create a `.env` file. Open `.env` then You will need to give your PORT, DB_HOST, DB_USER, DB_PASS and DATABASE:
